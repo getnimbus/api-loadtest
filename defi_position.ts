@@ -37,7 +37,7 @@ const options: loadtest.LoadTestOptions = {
   method: "GET",
   body: "",
   agentKeepAlive: true,
-  requestsPerSecond: RPS * protocols.length,
+  requestsPerSecond: RPS,
   maxSeconds: DURATION,
   requestGenerator: (params, options, client, callback) => {
     const address = getRandomAddress();
