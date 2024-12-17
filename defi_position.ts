@@ -29,6 +29,7 @@ const protocols = [
 ];
 
 const RPS = Number(process.env.RPS) || 10;
+const DURATION = Number(process.env.DURATION) || 120;
 
 const options: loadtest.LoadTestOptions = {
   url: "https://api.getnimbus.io/v2/address/0x692853c81afc8f847147c8a8b4368dc894697fc12b929ef3071482d27339815e/positions?protocol=scallop",
@@ -37,7 +38,7 @@ const options: loadtest.LoadTestOptions = {
   body: "",
   agentKeepAlive: true,
   requestsPerSecond: RPS * protocols.length,
-  maxSeconds: 120,
+  maxSeconds: DURATION,
   requestGenerator: (params, options, client, callback) => {
     const address = getRandomAddress();
     const protocol = protocols[Math.floor(Math.random() * protocols.length)];

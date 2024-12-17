@@ -8,17 +8,18 @@ import loadtest from "loadtest";
 import { addresses } from "./address";
 
 const RPS = Number(process.env.RPS) || 10;
+const DURATION = Number(process.env.DURATION) || 120;
 
 const getRandomAddress = () =>
   addresses[Math.floor(Math.random() * addresses.length)];
 
 const options: loadtest.LoadTestOptions = {
   url: "https://api.getnimbus.io/v2/address/0x692853c81afc8f847147c8a8b4368dc894697fc12b929ef3071482d27339815e/holding?chain=SUI&force_refresh=true&includePnl=false",
-  concurrency: 100,
+  concurrency: 10,
   method: "GET",
-  body: "",
+  agentKeepAlive: true,
   requestsPerSecond: RPS,
-  maxSeconds: 30,
+  maxSeconds: DURATION,
   requestGenerator: (params, options, client, callback) => {
     const address = getRandomAddress();
     options.href = `${options.url}${address}/holding?includePnl=false&chain=SUI`;
