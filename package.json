@@ -8,7 +8,8 @@
   },
   "scripts": {
     "loadtest:holding": "npx esno token_holding.ts",
-    "loadtest:defi": "npx esno defi_position.ts"
+    "loadtest:defi": "npx esno defi_position.ts",
+    "loadtest:pricing": "npx esno token_pricing.ts"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",

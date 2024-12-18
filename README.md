@@ -51,6 +51,12 @@ yarn loadtest:defi
 yarn loadtest:defi
 ```
 
+### Token Pricing
+- Endpoint: `/tokens/sui/price`
+- Method: POST
+- Batch Size: 50 tokens per request
+- Concurrency: 10
+- Duration: 120 seconds
 
 ## Endpoints Tested
 
