@@ -35,6 +35,20 @@ Configure the following environment variables in `.env`:
 - `RPS`: Requests per second (default: 10)
 - `DURATION`: Duration of the test in seconds (default: 120)
 
+4. Set maximum file descriptors limit:
+
+Before running load tests, increase your system's maximum file descriptors limit to handle multiple concurrent connections:
+
+```bash
+# Check current limit
+ulimit -n
+
+# Set new limit (example for 65535)
+ulimit -n 65535
+```
+
+Note: The limit should be higher than your maximum expected concurrent connections. If you're unable to set the limit, you may need sudo privileges or to modify system configuration files.
+
 ## Available Scripts
 ### Test token holdings endpoint
 ```bash
