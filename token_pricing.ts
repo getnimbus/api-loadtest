@@ -20,7 +20,7 @@ const getRandomTokens = () => {
 
 const options: loadtest.LoadTestOptions = {
   url: "https://api.getnimbus.io/tokens/sui/price",
-  concurrency: 10,
+  concurrency: Math.min(10, RPS / 20),
   method: "POST",
   agentKeepAlive: true,
   requestsPerSecond: RPS,
