@@ -14,7 +14,7 @@ const getRandomAddress = () =>
   addresses[Math.floor(Math.random() * addresses.length)];
 
 const options: loadtest.LoadTestOptions = {
-  url: "https://api.getnimbus.io/v2/address/0x692853c81afc8f847147c8a8b4368dc894697fc12b929ef3071482d27339815e/holding?chain=SUI&force_refresh=true&includePnl=false",
+  url: "https://api.getnimbus.io/v2/address/0x692853c81afc8f847147c8a8b4368dc894697fc12b929ef3071482d27339815e/holding?chain=SUI&force_refresh=false&includePnl=false",
   concurrency: 10,
   method: "GET",
   agentKeepAlive: true,
